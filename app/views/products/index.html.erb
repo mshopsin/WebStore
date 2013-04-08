@@ -1,0 +1,21 @@
+<h1>All Products from <%= app_name %></h1>
+<table>
+  <tr>
+    <% @products.first.attributes.each do |attr_name, attr_value| %>
+      <% next if text_aux?(attr_name) %>
+      <th><%= attr_name.capitalize %></th>
+
+    <% end %>
+  </tr>
+  <% @products.each do |product| %>
+    <tr>
+      <% product.attributes.each do |attr_name, attr_value| %>
+        <% next if text_aux?(attr_name) %>
+        <td>
+          <%= attr_value %>
+        </td>
+      <% end %>
+    </tr>
+    <% end%>
+    </table>
+

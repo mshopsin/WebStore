@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def app_name
-    "Fake Meat Store"
+    "Oriental Happy Tea Company"
   end
 
 end

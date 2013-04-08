@@ -1,3 +1,7 @@
 WebStore::Application.routes.draw do
-  resource :session, only: [:create, :destroy]
+  resource :session, only: [:new, :create, :destroy]
+
+  resources :users
+
+  resources :products
 end
