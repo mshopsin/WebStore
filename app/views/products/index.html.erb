@@ -8,14 +8,16 @@
     <% end %>
   </tr>
   <% @products.each do |product| %>
-    <tr>
+    <%= render partial: "product", object: product %>
+    <!-- <tr>
       <% product.attributes.each do |attr_name, attr_value| %>
         <% next if text_aux?(attr_name) %>
         <td>
           <%= attr_value %>
         </td>
       <% end %>
-    </tr>
+      <%= button_to "Add to Cart", add_to_cart_path(:product_id => product.id) %>
+    </tr> -->
     <% end%>
     </table>
 

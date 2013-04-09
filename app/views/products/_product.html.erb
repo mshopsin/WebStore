@@ -1,0 +1,13 @@
+<tr>
+  <% product.attributes.each do |attr_name, attr_value| %>
+    <% next if text_aux?(attr_name) %>
+    <td>
+      <%= attr_value %>
+    </td>
+  <% end %>
+  <td>
+    <% unless lock_table %>
+      <%= button_to "Add to Cart", add_to_cart_path(:product_id => product.id) %>
+    <% end %>
+  </td>
+</tr>

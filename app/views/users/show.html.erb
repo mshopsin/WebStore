@@ -1,2 +1,9 @@
 <h1>Welcome, <%= @user.email %> to your fancy <%= app_name %> Cart</h1>
+<%= debug cookies[:cart] %>
+
+<% cookies[:cart].split(',').each do |prod_id| %>
+  <%= render partial: "products/product", object: Product.find(prod_id.to_i) %>
+<br>
+<% end %>
+
 

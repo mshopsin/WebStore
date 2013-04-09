@@ -1,0 +1,20 @@
+<% sum = 0 %>
+<h1>Order Checkout</h1>
+
+<table>
+<% @order.products.each do |product| %>
+
+  <%= render partial: "/products/product", object: product, :locals => { :lock_table => true } %>
+  <% sum += product.price %>
+
+<% end %>
+</table>
+
+<br>
+<p>
+$<%= number_with_precision(sum, precision:2) %>
+<br>
+<%= link_to "Confirm Order & Pay UP", confirm_order(:id => @order.id) %>
+</p>
+<br>
+

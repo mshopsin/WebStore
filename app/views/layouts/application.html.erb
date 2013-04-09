@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WebStore</title>
+  <title><%= app_name %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= link_to "all products", products_path %><br><br>
+
   <% flash.each do |flash, msg| %>
     <%= msg %>
   <% end %>
-
+  <br>
 <%= yield %>
 
 <% if signed_in? %>
