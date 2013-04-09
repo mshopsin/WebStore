@@ -9,6 +9,7 @@
 <body>
   <%= link_to "all products", products_path %><br><br>
 
+
   <% flash.each do |flash, msg| %>
     <%= msg %>
   <% end %>
@@ -17,12 +18,12 @@
 
 <% if signed_in? %>
 
-<%= link_to "Sign Out", session_path, method: :delete %>
+  <%= link_to "View Cart", user_path(current_user) %>
+  <%= link_to "Sign Out", session_path, method: :delete %>
 
 <% else %>
 
   <%= link_to "Sign In", new_session_path %>
-
 
 <% end %>
 

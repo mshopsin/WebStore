@@ -8,5 +8,5 @@ WebStore::Application.routes.draw do
 
   post "/add_to_cart", to: 'users#add_to_cart'
 
-  post "/confirm_order", to: 'order#confirm_order'
+  post "/confirm_order", to: 'orders#confirm_order'
 end

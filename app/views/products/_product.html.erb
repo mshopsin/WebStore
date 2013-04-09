@@ -6,6 +6,7 @@
     </td>
   <% end %>
   <td>
+    <% lock_table ||= false %>
     <% unless lock_table %>
       <%= button_to "Add to Cart", add_to_cart_path(:product_id => product.id) %>
     <% end %>

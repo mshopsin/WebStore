@@ -11,6 +11,8 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     #emnpty cart
     #bill through stripe
-    email.deliver
+    UserMailer.confirm_order(@order).deliver!
+    cookies.delete(:cart)
+    redirect_to products_url
   end
 end

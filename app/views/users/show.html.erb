@@ -1,9 +1,20 @@
-<h1>Welcome, <%= @user.email %> to your fancy <%= app_name %> Cart</h1>
+<h1>Welcome, <%= @user.email.split('@').first %> to your fancy <%= app_name %> Cart</h1>
 <%= debug cookies[:cart] %>
-
-<% cookies[:cart].split(',').each do |prod_id| %>
-  <%= render partial: "products/product", object: Product.find(prod_id.to_i) %>
-<br>
+<table>]
+<% if cookies[:cart] %>
+  <% cookies[:cart].split(',').each do |prod_id| %>
+    <%= render partial: "products/product", object: Product.find(prod_id.to_i) %>
+  <% end %>
 <% end %>
+</table>
+
+<br>
+<br>
+
+<%= button_to "Check OUT!!!!", new_user_order_path(@user), method: :get %>
+
+<br>
+<br>
+
 
 
